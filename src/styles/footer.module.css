@@ -1,0 +1,51 @@
+/* Footer Styles */
+.footer {
+  background-color: #ffffff9a;
+  color: var(--black);
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: rgb(50 50 93 / 10%) 0 30px 60px -12px,
+    rgb(0 0 0 / 15%) 0 18px 36px -18px;
+  z-index: 100;
+  border-radius: 50px 50px 0 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.footerContent {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.socialLinks {
+  margin-top: 10px;
+}
+
+.socialIcon {
+  color: var(--white); /* Make sure icon color is white for visibility */
+  font-size: 24px;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: var(--light-grey); /* Change color on hover */
+}
+
+/* Media Query to hide footer on smaller screens */
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+}

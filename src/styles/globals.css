@@ -1,9 +1,9 @@
 /* RESET/BASIC STYLES */
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 :root {
-  --white: #ffffff;
-  --light-grey: #edf0f1;
+  --white: #ffffff9a;
+  --light-grey: #009bcf;
   --violet: #655be1;
   --dark-violet: #5146e1;
   --black: #21232a;
@@ -27,7 +27,14 @@ a {
 body {
   font-family: "Inter", sans-serif;
   text-align: center;
-  padding: 0 20px;
+
   background: var(--light-grey);
   color: var(--white);
+  background: linear-gradient(
+    135deg,
+    var(--violet),
+    var(--dark-violet),
+    var(--light-grey)
+  );
+  /* This gradient transitions from violet to dark-violet and light-grey */
 }

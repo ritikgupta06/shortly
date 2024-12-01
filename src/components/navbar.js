@@ -27,7 +27,6 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <p className={styles.notification}>Click on the Menu</p>
     </nav>
   );
 };
