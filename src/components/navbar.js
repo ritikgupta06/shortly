@@ -1,12 +1,11 @@
-import React from 'react';
-import styles from '../styles/navbar.module.css';
-import Link from 'next/link';
-
+import React from "react";
+import styles from "../styles/navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className={styles.nav}>
-      <input id="menu" type="checkbox" />
+      <input id="menu" type="checkbox" className={styles.hiddenCheckbox} />
       <label htmlFor="menu">Menu</label>
       <ul className={styles.menu}>
         <li>
@@ -29,7 +28,6 @@ const Navbar = () => {
         </li>
       </ul>
       <p className={styles.notification}>Click on the Menu</p>
-    
     </nav>
   );
 };

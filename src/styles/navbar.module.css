@@ -1,208 +1,192 @@
 /* MAIN STYLES - DESKTOP */
 .nav {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-    padding: 20px;
-    border-radius: 5px 5px 25px 25px;
-    margin: 50px auto;
-    background: var(--white);
-    box-shadow: rgb(50 50 93 / 10%) 0 30px 60px -12px,
-      rgb(0 0 0 / 15%) 0 18px 36px -18px;
-  }
-  
-  .nav .menu {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .menu li {
-    margin: 0 20px;
-  }
-  
-  .menu li a {
-    font-size: 16px;
-    padding: 10px;
-    color: var(--black);
-    background: var(--violet);
-    border-radius: 50%;
-  }
-  
-  .menu li a:hover {
-    background: var(--dark-violet);
-  }
-  
-  /* FOOTER STYLES */
-  .pageFooter {
-    position: fixed;
-    right: 0;
-    bottom: 60px;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    color: var(--black);
-  }
-  
-  .pageFooter a {
-    display: flex;
-    margin-left: 4px;
-  }
-  
-  
-  /* MAIN STYLES - MOBILE */
-  @media (max-width: 768px) {
-    .nav {
-        display: block;
-        width: 100%;
-        position: fixed; /* Fix navbar at the bottom */
-        left: 0;
-        bottom: 0; /* Position at the bottom */
-        margin: 0;
-        padding: 10px;
-        background: var(--white); /* Optional: Background color for visibility */
-        box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-        z-index: 10; /* Ensure it's above other content */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 5px 5px 25px 25px;
+  margin: 30px auto;
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-      }
-    .nav [type="checkbox"] {
-      position: absolute;
-      left: -99px;
+/* Hover effect for expanding nav */
+.nav:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 42, 42, 0.329);
+}
 
-    }
-  
-    .nav [type="checkbox"] + label {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      cursor: pointer;
-      background: var(--violet);
-      border-radius: 50%;
-      transition: all 0.2s;
-      margin: 0 auto;
-      left: 10px;
-      z-index: 1000;
-      top: 20px;
-    }
-  
-    .nav [type="checkbox"] + label:hover {
-      background: var(--dark-violet);
-    }
-  
-    .menu {
-      display: none;
-      position: relative;
-      left: 10px;
-      padding-top: 20px;
-      width: 100%;
-      background: var(--white);
-      left: -10px;
-    }
-  
-    .menu li {
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all 0.4s;
-    }
-  
-    .menu li:nth-child(1) {
-      transition-delay: 0.2s;
-    }
-  
-    .menu li:nth-child(2) {
-      transition-delay: 0.15s;
-    }
-  
-    .menu li:nth-child(3) {
-      transition-delay: 0.1s;
-    }
-  
-    .menu li:nth-child(4) {
-      transition-delay: 0.05s;
-    }
-  
-    .menu li a {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--violet);
-    }
-  
-    .menu li a span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateY(calc(-100% - 5px));
-      width: 100%;
-      font-size: 13px;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-      color: var(--black);
-      font-weight: bold;
-    }
-  
-    .nav input:checked + label {
-      background: var(--black);
-      transform: translateY(calc(-50% + 4px));
-    }
-  
-    .nav input:checked ~ .menu {
-      display: block;
-    }
-  
-    .nav input:checked ~ .menu li:nth-child(1) {
-      top: -210px;
-      transition-delay: 0.1s;
-    }
-  
-    .nav input:checked ~ .menu li:nth-child(2) {
-      top: -160px;
-      left: calc(50% - 75px);
-      transition-delay: 0.2s;
-    }
-  
-    .nav input:checked ~ .menu li:nth-child(3) {
-      top: -160px;
-      left: calc(50% + 75px);
-      transition-delay: 0.3s;
-    }
-  
-    .nav input:checked ~ .menu li:nth-child(4) {
-      top: -110px;
-      transition-delay: 0.4s;
-    }
-  
-    .nav input:checked ~ .menu li a span {
-      opacity: 1;
-      transition-delay: 0.9s;
-    }
+.hiddenCheckbox {
+  display: none;
+}
 
-    /* Move the nav to the footer in mobile view */
-  .pageFooter {
+.nav .menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin: 0 20px;
+}
+
+.menu li a {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: var(--black);
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for links */
+.menu li a:hover {
+  color: red;
+  background: rgba(255, 0, 0, 0.1); /* Slight background change on hover */
+  border-radius: 5px;
+}
+
+/* Active link functionality */
+.menu li a:active,
+.menu li a.active {
+  color: red;
+  background: rgba(255, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* MAIN STYLES - MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    display: block;
+    width: 100%;
     position: fixed;
     left: 0;
-    right: 0;
     bottom: 0;
-    display: flex;
-    justify-content: center;
+    margin: 0;
     padding: 10px;
     background: var(--white);
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -7px 10px rgba(255, 25, 25, 0.408);
+    z-index: 10;
+  }
+  .nav [type="checkbox"] {
+    position: absolute;
+    left: -99px;
   }
 
-  .pageFooter .nav {
+  .nav [type="checkbox"] + label {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    background: #ff2a00;
+    border-radius: 50%;
+    transition: all 0.2s;
+    margin: 0 auto;
+    left: 10px;
+    z-index: 1000;
+    top: 20px;
+  }
+
+  .nav [type="checkbox"] + label:hover {
+    background: #ff2a00;
+  }
+
+  .menu {
+    display: none;
+    position: relative;
+    left: 10px;
+    padding-top: 20px;
     width: 100%;
-    max-width: 300px; /* Limit the nav width */
+    background: var(--white);
+    left: -10px;
+  }
+
+  .menu li {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s;
+  }
+
+  .menu li:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+
+  .menu li:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .menu li:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+
+  .menu li:nth-child(4) {
+    transition-delay: 0.05s;
+  }
+
+  .menu li a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff2d15;
+  }
+
+  .menu li a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(calc(-100% - 5px));
+    width: 100%;
+    font-size: 13px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  .nav input:checked + label {
+    background: var(--black);
+    transform: translateY(calc(-50% + 4px));
+  }
+
+  .nav input:checked ~ .menu {
+    display: block;
+  }
+
+  .nav input:checked ~ .menu li:nth-child(1) {
+    top: -210px;
+    transition-delay: 0.1s;
+  }
+
+  .nav input:checked ~ .menu li:nth-child(2) {
+    top: -160px;
+    left: calc(50% - 75px);
+    transition-delay: 0.2s;
+  }
+
+  .nav input:checked ~ .menu li:nth-child(3) {
+    top: -160px;
+    left: calc(50% + 75px);
+    transition-delay: 0.3s;
+  }
+
+  .nav input:checked ~ .menu li:nth-child(4) {
+    top: -110px;
+    transition-delay: 0.4s;
+  }
+
+  .nav input:checked ~ .menu li a span {
+    opacity: 1;
+    transition-delay: 0.9s;
   }
 }
